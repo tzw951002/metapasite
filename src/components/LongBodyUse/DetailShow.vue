@@ -5,11 +5,11 @@
         <v-img :src="testSrc" contain height="400px"></v-img>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row style="margin-top: 50px">
       <v-col cols="12" align="start" style="padding-left:180px;">
         <h1 style="color: whitesmoke;">{{ subTitle }}</h1>
         <br>
-        <h2 style="color: whitesmoke">{{ textBody }}</h2>
+        <h2 style="color: whitesmoke" v-for="(item,index) in textBody.split(';')" :key="index">{{ item }}</h2>
       </v-col>
     </v-row>
   </v-container>
@@ -36,9 +36,6 @@ export default {
     return {
       testSrc: require(`@/assets/longBody/${this.imageSrc}`)
     }
-  },
-  mounted() {
-    console.log(this.imageSrc);
   }
 }
 </script>
