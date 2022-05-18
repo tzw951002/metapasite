@@ -1,11 +1,11 @@
 <template>
-  <v-container class="showMessage" :style="changeStyle" fluid>
-      <v-row style="margin-top: 780px;">
-        <v-col cols="12" align="center">
-          <span class="titleFont">We provide not only the exciting experience of choosing a store or stand and</span><br>
-          <span class="titleFont">playing for victory,but also the joy of winning.</span>
-        </v-col>
-      </v-row>
+  <v-container class="showMessage" :style="changeStyle" fluid style="margin-top: 2%">
+    <v-row :style="fontStyle">
+      <v-col cols="12" align="center">
+        <span class="titleFont"><b>Realizing the dream of huge amusement in Japan</b></span><br>
+        <span class="titleFont"><b>as scale of 14 trillion yen by METAVERSE</b></span>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -14,9 +14,18 @@ export default {
   name: "ShowMessage",
   data() {
     return {
-      changeStyle: 'height:' + window.innerHeight + 'px;'
     }
   },
+  computed: {
+    changeStyle(){
+      const backgroudWidth = window.innerWidth;
+      const backgroundHeight = backgroudWidth*873/1551;
+      return 'width:' + backgroudWidth + 'px;'+'height:' + backgroundHeight + 'px;';
+    },
+    fontStyle() {
+      return "margin-top:45%;"
+    }
+  }
 }
 </script>
 
@@ -25,8 +34,9 @@ export default {
   background: url('../assets/showMessage/tower.png') no-repeat !important;
   background-size: 100% 100% !important;
 }
+
 .titleFont {
-  font-size: 28px;
+  font-size: 2vw;
   font-weight: bold;
   color: whitesmoke;
 }
